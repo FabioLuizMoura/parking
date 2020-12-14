@@ -48,6 +48,8 @@ Geração do banco de dados execute o script no banco Sql Server:
 >    IsActive bit
 > );
 
+Defina o projeto __Parking.API__ como projeto de inicialização.
+
 Insira sua connection string no arquivo __"appsettings.json"__, nessa linha do json "parking.sql": "__Aqui__".
 Sinta-se a vontade para executar no IIS Express ou Kestrel.
 
