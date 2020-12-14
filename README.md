@@ -2,13 +2,13 @@
 Sistema para gestão de estacionamentos
 
 ## Tecnologias Utilizadas
-Linguagem: C#
-Versão do projeto: .NET Core 2.1, 
-Camada de apresentação: Web API, 
-Framework de notificação: Flunt (1.0.5), 
-Framework para acesso a dados: Dapper (20.0.78), 
-Acesso a dado: SqlClient (4.8.2), 
-Recuperar a connection string: Configuration.Abstractions (2.1.1), 
+* Linguagem: C#
+* Versão do projeto: .NET Core 2.1, 
+* Camada de apresentação: Web API, 
+* Framework de notificação: Flunt (1.0.5), 
+* Framework para acesso a dados: Dapper (20.0.78), 
+* Acesso a dado: SqlClient (4.8.2), 
+* Recuperar a connection string: Configuration.Abstractions (2.1.1), 
 
 ## Configurações para execução
 Geração do banco de dados execute o script no banco Sql Server:
