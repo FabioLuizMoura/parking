@@ -28,8 +28,7 @@ Geração do banco de dados execute o script no banco Sql Server:
 >    Description varchar(50) not null
 >);
 
->insert into VehicleType (Id, Description) values (1, 'Car');
->insert into VehicleType (Id, Description) values (2, 'Motorcycle');
+>insert into VehicleType (Id, Description) values (1, 'Car'), (2, 'Motorcycle');
 
 > create table Vehicle(
 >    Id int identity primary key,
