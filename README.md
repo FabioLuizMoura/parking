@@ -12,7 +12,7 @@ Recuperar a connection string: Configuration.Abstractions (2.1.1)
 
 ## Configurações para execução
 Geração do banco de dados execute o script no banco Sql Server:
-# Markdown
+
 > create table Company(
 >    Id int identity primary key,
 >    Name varchar(70) not null,
@@ -23,17 +23,14 @@ Geração do banco de dados execute o script no banco Sql Server:
 >    NumberOfSpacesForCars int not null
 > );
 
-# Markdown
 > create table VehicleType(
 >    Id int primary key not null,
 >    Description varchar(50) not null
 >);
 
-# Markdown
 >insert into VehicleType (Id, Description) values (1, 'Car');
 >insert into VehicleType (Id, Description) values (2, 'Motorcycle');
 
-# Markdown
 > create table Vehicle(
 >    Id int identity primary key,
 >    Brand varchar(70) not null,
@@ -43,7 +40,6 @@ Geração do banco de dados execute o script no banco Sql Server:
 >    [type] int not null foreign key references VehicleType(id),
 > );
 
-# Markdown
 > create table CompanyVehicle (
 >    Id int identity primary key,
 >    VehicleId int foreign key references Vehicle(id),
@@ -53,9 +49,7 @@ Geração do banco de dados execute o script no banco Sql Server:
 >    IsActive bit
 > );
 
-# Markdown
 Insira sua connection string no arquivo __"appsettings.json"__, nessa linha do json "parking.sql": "__Aqui__".
 Sinta-se a vontade para executar no IIS Express ou Kestrel.
 
-# Markdown
 Para facilitar e documentar as chamadas da api no sistema, foi criado uma collection do postman com o nome de __Parking__ e se encontra na raiz do projeto.
