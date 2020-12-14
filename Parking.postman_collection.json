@@ -1,0 +1,948 @@
+{
+	"info": {
+		"_postman_id": "77e4d287-6476-4d6f-b716-f3549512b402",
+		"name": "Parking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tipo de veiculo",
+			"item": [
+				{
+					"name": "Buscar tipo de veiculo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicletype",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicletype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar tipo de veiculo XML",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicletype",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicletype"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Recupera o tipo do veiculo para realizar a inclusão de um novo veiculo",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2a6c9f35-bee9-42a8-8a13-78bd69fc4c45",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b259a3b3-8134-45db-a52b-7519977d3d4a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Estabelecimento",
+			"item": [
+				{
+					"name": "Veiculo",
+					"item": [
+						{
+							"name": "buscar todos veiculos do estabelecimento",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urlBase}}/api/company/{{companyId}}/vehicle",
+									"host": [
+										"{{urlBase}}"
+									],
+									"path": [
+										"api",
+										"company",
+										"{{companyId}}",
+										"vehicle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buscar todos veiculos do estabelecimento xml",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{urlBase}}/api/company/{{companyId}}/vehicle",
+									"host": [
+										"{{urlBase}}"
+									],
+									"path": [
+										"api",
+										"company",
+										"{{companyId}}",
+										"vehicle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "criar veiculo e vincular com o estabelecimento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"brand\": \"honda\", \r\n    \"model\": \"Civic\", \r\n    \"color\": \"prata\", \r\n    \"plate\": \"abc1234\", \r\n    \"type\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{urlBase}}/api/company/{{companyId}}/vehicle",
+									"host": [
+										"{{urlBase}}"
+									],
+									"path": [
+										"api",
+										"company",
+										"{{companyId}}",
+										"vehicle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "criar veiculo e vincular com o estabelecimento xml",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"brand\": \"honda\", \r\n    \"model\": \"Civic\", \r\n    \"color\": \"prata\", \r\n    \"plate\": \"abc1234\", \r\n    \"type\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{urlBase}}/api/company/{{companyId}}/vehicle",
+									"host": [
+										"{{urlBase}}"
+									],
+									"path": [
+										"api",
+										"company",
+										"{{companyId}}",
+										"vehicle"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "db0c09a6-0d8a-47a2-aead-31210a15bf8a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b9fc43f-8bed-4296-bf1b-d6b971bfcef6",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Criar estabelecimento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Estacionamento e cia ltda\", \r\n    \"cnpj\": \"17110897000109\", \r\n    \"address\": \"Rua Dom Pedro II, 518 - Jardim Netinho Prado - Jaú - SP\", \r\n    \"telephone\": \"1427963861\", \r\n    \"numberOfSpacesForMotorcycles\": 43, \r\n    \"numberOfSpacesForCars\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/company",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar estabelecimento xml",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Estacionamento e cia ltda\", \r\n    \"cnpj\": \"17110897000109\", \r\n    \"address\": \"Rua Dom Pedro II, 518 - Jardim Netinho Prado - Jaú - SP\", \r\n    \"telephone\": \"1427963861\", \r\n    \"numberOfSpacesForMotorcycles\": 43, \r\n    \"numberOfSpacesForCars\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/company",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar estabelecimento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Estacionamento e cia ltda\", \r\n    \"cnpj\": \"17110897000109\", \r\n    \"address\": \"Rua Dom Pedro II, 518 - Jardim Netinho Prado - Jaú - SP\", \r\n    \"telephone\": \"1427963861\", \r\n    \"numberOfSpacesForMotorcycles\": 23, \r\n    \"numberOfSpacesForCars\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/company",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar estabelecimento xml",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Estacionamento e cia ltda\", \r\n    \"cnpj\": \"17110897000109\", \r\n    \"address\": \"Rua Dom Pedro II, 518 - Jardim Netinho Prado - Jaú - SP\", \r\n    \"telephone\": \"1427963861\", \r\n    \"numberOfSpacesForMotorcycles\": 48, \r\n    \"numberOfSpacesForCars\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/company",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar estabelecimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/api/company?id={{companyId}}&cnpj={{cnpj}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{companyId}}"
+								},
+								{
+									"key": "cnpj",
+									"value": "{{cnpj}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar estabelecimento xml",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlBase}}/api/company?id={{companyId}}&cnpj={{cnpj}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{companyId}}"
+								},
+								{
+									"key": "cnpj",
+									"value": "{{cnpj}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar estabelecimento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/api/company/{{companyId}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company",
+								"{{companyId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar estabelecimento xml",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlBase}}/api/company/{{companyId}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"company",
+								"{{companyId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b3508dc7-2094-44fe-b207-67096e15bd0b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0eac5c8-9d2d-4ac8-9e10-34ffc1fb1c3c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Veiculo",
+			"item": [
+				{
+					"name": "Buscar veiculo por id ou placa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle?id={{vehicleId}}&plate={{plate}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{vehicleId}}"
+								},
+								{
+									"key": "plate",
+									"value": "{{plate}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar veiculo por id ou placa xml",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle?id={{vehicleId}}&plate={{plate}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{vehicleId}}"
+								},
+								{
+									"key": "plate",
+									"value": "{{plate}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar veiculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar veiculos xml",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar veiculo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"honda\", \r\n    \"model\": \"Civic\", \r\n    \"color\": \"prata\", \r\n    \"plate\": \"abc1234\", \r\n    \"type\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar veiculo xml",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"honda\", \r\n    \"model\": \"Civic\", \r\n    \"color\": \"prata\", \r\n    \"plate\": \"abc1234\", \r\n    \"type\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Altera veiculo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"brand\": \"honda\", \r\n    \"model\": \"Civic\", \r\n    \"color\": \"prata\", \r\n    \"plate\": \"cbd5687\", \r\n    \"type\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar veiculo xml",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"brand\": \"honda\", \r\n    \"model\": \"Civic\", \r\n    \"color\": \"preto\", \r\n    \"plate\": \"abc1234\", \r\n    \"type\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar veiculo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle/{{vehicleId}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle",
+								"{{vehicleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar veiculo xml",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlBase}}/api/vehicle/{{vehicleId}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"vehicle",
+								"{{vehicleId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Vincular ou desvincular veiculo a um estabelecimento",
+			"item": [
+				{
+					"name": "Criar vinculo de veiculo com estabelecimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": 4,\r\n    \"vehicleId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/companyvehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"companyvehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar vinculo de veiculo com estabelecimento xml",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": 4,\r\n    \"vehicleId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/companyvehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"companyvehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "marcar saidado veiculo do estabelecimento",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": 4,\r\n    \"vehicleId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/companyvehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"companyvehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "marcar saidado veiculo do estabelecimento xml",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": 4,\r\n    \"vehicleId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/companyvehicle",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"companyvehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover vinculo de veiculo com estabelecimento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": 4,\r\n    \"vehicleId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/companyvehicle/{{companyVehicleId}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"companyvehicle",
+								"{{companyVehicleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover vinculo de veiculo com estabelecimento xml",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\": 4,\r\n    \"vehicleId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlBase}}/api/companyvehicle/{{companyVehicleId}}",
+							"host": [
+								"{{urlBase}}"
+							],
+							"path": [
+								"api",
+								"companyvehicle",
+								"{{companyVehicleId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

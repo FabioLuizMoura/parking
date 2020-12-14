@@ -52,4 +52,12 @@ Geração do banco de dados execute o script no banco Sql Server:
 Insira sua connection string no arquivo __"appsettings.json"__, nessa linha do json "parking.sql": "__Aqui__".
 Sinta-se a vontade para executar no IIS Express ou Kestrel.
 
-Para facilitar e documentar as chamadas da api no sistema, foi criado uma collection do postman com o nome de __Parking__ e se encontra na raiz do projeto.
+Para facilitar e documentar as chamadas da api no sistema, foi criado uma collection e um environment do postman com os nomes de __Parking__ e se encontra na raiz do projeto.
+
+No Environments é necessário atualizar algumas variáveis:
+* urlBase: colocar a url base do projeto, ex url rodando com o kestrel: "https://localhost:5001"
+* companyId: id referente a estabelecimento criado e utilizado nos testes
+* vehicleId: id referente a o veículo criado e utilizado nos testes
+* cnpj: cnpj do estabelecimento criado e utilizado nos testes
+* plate: placa do veículo criado e utilizado nos testes
+* companyVehicleId: id do vínculo do veículo com o estabelecimento criado e utilizado nos testes
